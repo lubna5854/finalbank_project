@@ -1,0 +1,146 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/blank.css' %}" rel="stylesheet">
+    <!--<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>-->
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-blue"
+                href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
+                    class="fa fa-bars"></i></a>
+            <a href="" class="w3-bar-item w3-button w3-padding-large w3-white">Welcome</a>
+            <a href="{% url 'bankapp:bankfun' %}"
+                class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+            <a href="{% url 'accountapp:accountopen' %}"
+                class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Create Account</a>
+            <a href="{% url 'credential:logoutfun' %}"
+                class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Logout</a>
+
+        </div>
+
+        <!-- Navbar on small screens 
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+        </div>-->
+    </div>
+
+    <!-- Header -->
+    <header class="w3-container w3-blue w3-center" style="padding:128px 16px">
+        <h1 class="w3-margin w3-jumbo">IDFC Investment Bank</h1>
+        <p class="w3-xlarge">Welcome to the World of Banking</p>
+        <a class="w3-button w3-black w3-padding-large w3-large w3-margin-top" href="{% url 'accountapp:accountopen' %}">Create an account</a>
+    </header>
+
+    <!-- First Grid -->
+    <form action="blank" method="post">
+        <div class="w3-row-padding w3-padding-64 w3-container">
+            <div class="w3-content">
+                <div class="w3-twothird">
+                    <h1>IDFC Investment Bank</h1>
+                    <h5 class="w3-padding-32">Stay updated on all the news about IDFC Bank, our products, services,
+                        network and people. Browse through archives of press releases, read what the print and
+                        electronic media has to say about us, download our media kit and, if you are from the media, get
+                        in touch with our public relations team. <br><br>
+                        <br>
+                        <p class="w3-text-grey"> As of 1 June 2023, the bank's distribution network was at 8,344
+                            branches and 19,727 ATMs across 3,811 cities.It has installed 4,30,000 POS terminals and
+                            issued 2.35 crore (23.5 million) debit cards and 1.2 crore (12 million) cblueit cards in FY
+                            2017.[16] It has a base of 1,77,000 permanent employees as of 1 June 2023.[17]</p>
+                </div>
+
+                <div class="w3-third w3-center">
+                    <i class="fa fa-anchor w3-padding-64 w3-text-blue"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Grid -->
+        <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+            <div class="w3-content">
+                <div class="w3-third w3-center">
+                    <i class="fa fa-coffee w3-padding-64 w3-text-blue w3-margin-right"></i>
+                </div>
+
+                <div class="w3-twothird">
+                    <h1>Products and Services</h1>
+                    <h5 class="w3-padding-32">IDFC Bank provides a number of products and services including wholesale
+                        banking, retail banking, treasury, auto loans, two-wheeler loans, personal loans, loans against
+                        property, consumer durable loan, lifestyle loan and cblueit cards. Along with this various
+                        digital products are Payzapp and SmartBUY.
+                        <br>
+                        <p class="w3-text-grey">On April 4, 2022, IDFC Bank announced a merger with the Housing
+                            Development Finance Corporation.[24] Upon the completion of the merger, IDFC became the
+                            fourth-largest bank in the world by market capitalization.[25] The effective date of the
+                            merger was set to be July 1, 2023. After the merger takes place, IDFC, a housing financing
+                            corporation, will transfer its home loan portfolio to IDFC Bank. Also, the bank is giving
+                            home financing company depositors the choice of either withdrawing their money or renewing
+                            their deposits with the private sector bank at the interest rate that the bank is currently
+                            offering.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+            <h1 class="w3-margin w3-xlarge">We Understand Your World</h1>
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+            <div class="w3-xlarge w3-padding-32">
+                <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                <i class="fa fa-instagram w3-hover-opacity"></i>
+                <i class="fa fa-snapchat w3-hover-opacity"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                <i class="fa fa-twitter w3-hover-opacity"></i>
+                <i class="fa fa-linkedin w3-hover-opacity"></i>
+            </div>
+            <p>Poweblue by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">IDFC Development
+                    Team</a></p>
+        </footer>
+
+        <script>
+            // Used to toggle the menu on small screens when clicking on the menu button
+            function myFunction() {
+                var x = document.getElementById("navDemo");
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else {
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>

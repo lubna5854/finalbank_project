@@ -1,0 +1,115 @@
+{% load static %}
+
+<!--Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+
+<!-- Bootstrap CSS File -->
+<link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+<!-- Libraries CSS Files -->
+<link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
+<!-- Main Stylesheet File -->
+<link href="{% static 'css/reg.css' %}" rel="stylesheet">
+
+
+<form action="registration" method="post">
+    {% csrf_token %}
+    <div class="form_wrapper">
+        <div class="form_container">
+            <div class="title_container">
+                <h2>Registration Form</h2>
+            </div>
+            <div class="row clearfix">
+                <div class="">
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                        <!-- <input name="email" type="email" pattern="/[a-zA-Z0-9!#$%&'+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)/" placeholder="Enter your email" title="Please Enter valid Email" required />
+                     -->
+                        <input type="email" name="email" pattern="/^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/"
+                            placeholder="Enter your email" title="Please enter a valid email address" required />
+                    </div>
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                        <input type="password" name="password" placeholder="Password" required />
+                    </div>
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                        <input type="password" name="password" placeholder="Re-type Password" required />
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col_half">
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                                <input type="text" name="first_name" placeholder="First Name" required />
+                            </div>
+                        </div>
+                        <div class="col_half">
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                                <input type="text" name="last_name" placeholder="Last Name" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                        <input type="text" name="username" placeholder="User Name" required />
+                    </div>
+                    <div class="radio_option">
+                        <input class="border rounded-full " type="radio" name="gender" id="rd1" checked>
+                        <label for="rd1">Male</label>
+                        <input type="radio" name="gender" id="rd2">
+                        <label for="rd2">Female</label>
+                    </div>
+                    <div class="input_field select_option">
+                        <select name="country">
+                            <option>Select a country</option>
+                            <option>India</option>
+                            <option>US</option>
+                            <option>UK</option>
+                            <option>Singapore</option>
+                            <option>UAE</option>
+                            <option>Canada</option>
+                            <option>Egypt</option>
+                            <option>Brazil</option>
+                            <option>Norway</option>
+                            <option>Saudi Arabia</option>
+                            <option>Russia</option>
+                            <option>China</option>
+                            <option>Korea</option>
+                            <option>Thailand</option>
+                            <option>Mecsico</option>
+                            <option>Japan</option>
+                            <option>Poland</option>
+                            <option>Switzerland</option>
+                            <option>Germany</option>
+                            <option>Australia</option>
+                            <option>Malta</option>
+                        </select>
+                        <!--<div class="select_arrow"></div>-->
+                    </div>
+                    <div class="input_field checkbox_option">
+                        <input type="checkbox" id="cb1" required />
+                        <label for="cb1">I agree with terms and conditions</label>
+                    </div>
+                    <div class="input_field checkbox_option">
+                        <input type="checkbox" id="cb2">
+                        <label for="cb2">I want to receive the newsletter</label>
+                    </div>
+                    <button class="btn btn-primary w-100 " type="submit" value="Register">Register</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-lg-left">
+                    <a class="border ms-auto" href="{% url 'bankapp:bankfun' %}">HOME</a>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a class="border ms-auto" href="{% url 'credential:logfun' %}">SIGN IN</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="text-primary text-center mx-auto my-2">Developed by <a href="http://www.idfcbank.com" target="_blank">IDFC
+            Development Pvt Ltd</a>
+    </p>
+</form>
+
+{% for msg in messages %}
+<div class="bg-warning rounded border shadow px-2 py-2  ">
+    <p class="my-auto ">{{msg}}</p>
+</div>
+{% endfor %}

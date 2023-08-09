@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dependent Drop-Down Lists</title>
+</head>
+<body>
+    <form action="drop" method="post">
+    <label for="firstDropdown">Select a category:</label>
+    <select id="firstDropdown" onchange="populateSecondDropdown()">
+        <option value="fruits">Fruits</option>
+        <option value="vegetables">Vegetables</option>
+    </select>
+
+    <label for="secondDropdown">Select an item:</label>
+    <select id="secondDropdown">
+    </select>
+
+    <script>
+        function populateSecondDropdown() {
+            var firstDropdown = document.getElementById("firstDropdown");
+            var secondDropdown = document.getElementById("secondDropdown");
+            
+            var selectedCategory = firstDropdown.value;
+            secondDropdown.innerHTML = "";
+
+            if (selectedCategory === "fruits") {
+                var fruits = ["Apple", "Banana", "Orange"];
+                for (var i = 0; i < fruits.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = fruits[i];
+                    secondDropdown.add(option);
+                }
+            } else if (selectedCategory === "vegetables") {
+                var vegetables = ["Carrot", "Broccoli", "Spinach"];
+                for (var i = 0; i < vegetables.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = vegetables[i];
+                    secondDropdown.add(option);
+                }
+            }
+        }
+
+        // Populate the second dropdown when the page loads
+        populateSecondDropdown();
+    </script>
+    </form>
+</body>
+</html>

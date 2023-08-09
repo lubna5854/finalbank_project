@@ -1,0 +1,696 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Banking Solution</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- Favicon
+  <link href="img/favicon.ico" rel="icon">
+
+   Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Bell
+    Theme URL: https://bootstrapmade.com/bell-free-bootstrap-4-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+  <!-- Page Content
+    ================================================== -->
+  <!-- Hero -->
+
+  <section class="hero">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <a class="hero-brand" href="" title="Home"><img alt="Logo" src="{% static 'img/logo.png' %}"></a>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <h1>
+          IDFC INVESTMENT BANK
+        </h1>
+
+        <p class="tagline">
+          Easy, Instant & Secure
+        </p>
+        <a class="btn btn-full" href="#">Get Started Now</a>
+      </div>
+    </div>
+
+  </section>
+  <!-- /Hero -->
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+
+      <div id="" class="pull-left">
+        <a href="index.html"><img src="" alt="" title="" /></img></a>
+        <!-- Uncomment below if you prefer to use a text image -->
+        <!--<h1><a href="#hero">Bell</a></h1>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#features">Features</a></li>
+
+          {% if user.is_authenticated %}
+          <li class="text-white"><a><b>Welcome {{user.first_name}}</b> </a></li>
+
+          <li class="menu-has-children"><a href="">Branches</a>
+            <ul>
+              <li class="menu-has-children"><a href="#">Palakkad</a>
+                <ul>
+                  <li><a href="#">Pattambi</a></li>
+                  <li><a href="#">Ottappalam</a></li>
+                  <li><a href="#">Shornur</a></li>
+                  <li><a href="#">Mannarkkad</a></li>
+                  <li><a href="#">Koottanad</a></li>
+                </ul>
+              </li>
+              <li class="menu-has-children"><a href="#">Thrissur</a>
+                <ul>
+                  <li><a href="#">Kunnamkulam</a></li>
+                  <li><a href="#">Ollur</a></li>
+                  <li><a href="#">Kechery</a></li>
+                  <li><a href="#">Kodakar</a></li>
+                  <li><a href="#">M G Road</a></li>
+                </ul>
+              </li>
+              <li class="menu-has-children"><a href="#">Eranamkulam</a>
+                <ul>
+                  <li><a href="#">Aluva</a></li>
+                  <li><a href="#">Fort Kochi</a></li>
+                  <li><a href="#">Kakkanad</a></li>
+                  <li><a href="#">Cusat</a></li>
+                  <li><a href="#">Chalakkudy</a></li>
+                </ul>
+              </li>
+              <li class="menu-has-children"><a href="#">Calicut</a>
+                <ul>
+                  <li><a href="#">Ferok</a></li>
+                  <li><a href="#">Mavoor</a></li>
+                  <li><a href="#">Vatakara</a></li>
+                  <li><a href="#">Beypore</a></li>
+                  <li><a href="#">Olavanna</a></li>
+                </ul>
+              </li>
+              <li class="menu-has-children"><a href="#">Malappuram</a>
+                <ul>
+                  <li><a href="#">Manjery</a></li>
+                  <li><a href="#">Nilambur</a></li>
+                  <li><a href="#">Tirur</a></li>
+                  <li><a href="#">Ponnani</a></li>
+                  <li><a href="#">Kottakkal</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="{% url 'credential:logoutfun' %}">Logout</a></li>
+          {% else %}
+          <li><a href="{% url 'credential:regfun' %}">Register</a></li>
+          <li><a href="{% url 'credential:logfun' %}">Login</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+      <!-- #nav-menu-container -->
+
+      <nav class="nav social-nav pull-right d-none d-lg-inline my-auto m-0">
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-envelope"></i></a>
+
+      </nav>
+
+
+
+    </div>
+  </header>
+  <!-- #header -->
+
+  <!-- About -->
+
+  <section class="about" id="about">
+    <div class="container text-center">
+      <h2>
+        About IDFC Investment Bank
+      </h2>
+
+      <p>
+        IDFC Investment Bank is one of India’s leading private banks and was among the first to receive approval from
+        the Reserve Bank of India (RBI) to set up a private sector bank in 1990. As of August 30, 2023, the Bank’s
+        distribution network was at 7,860 branches and 20,352 ATMs / Cash Recycler Machine ( Cash deposit & withdrawal )
+        across 3,825 cities / towns
+      </p>
+
+      <div class="row stats-row">
+        <div class="stats-col text-center col-md-3 col-sm-6">
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">216578</span> Satisfied Customers
+          </div>
+        </div>
+
+        <div class="stats-col text-center col-md-3 col-sm-6">
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">185406</span> Released Loans
+          </div>
+        </div>
+
+        <div class="stats-col text-center col-md-3 col-sm-6">
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">24</span> Hours Of Support
+          </div>
+        </div>
+
+        <div class="stats-col text-center col-md-3 col-sm-6">
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">356878</span> Hard Workers
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /About -->
+  <!-- Parallax -->
+
+  <div class="block bg-primary block-pd-lg block-bg-overlay text-center"
+    data-bg-img="{% static 'img/parallax-bg.jpg' %}" data-settings='{"stellar-background-ratio": 0.6}'
+    data-toggle="parallax-bg">
+    <h2>
+      Welcome to the World of Banking
+    </h2>
+
+    <p>
+      Stay updated on all the news about IDFC Bank, our products, services, network and people. Browse through archives
+      of press releases, read what the print and electronic media has to say about us, download our media kit and, if
+      you are from the media, get in touch with our public relations team.
+    </p>
+    <img alt="Bell - A perfect theme" class="gadgets-img hidden-md-down" src="{% static 'img/gadg.png' %}">
+  </div>
+  <!-- /Parallax -->
+  <!-- Features -->
+
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="text-center">
+        Features
+      </h2>
+
+      <div class="row">
+        <div class="feature-col col-lg-4 col-xs-12">
+          <div class="card card-block text-center">
+            <div>
+              <div class="feature-icon">
+                <span class="fa fa-rocket"></span>
+              </div>
+            </div>
+
+            <div>
+              <h3>
+                PayZapp
+              </h3>
+
+              <p>
+                All New PayZapp forOnline Payments. All New Offers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-col col-lg-4 col-xs-12">
+          <div class="card card-block text-center">
+            <div>
+              <div class="feature-icon">
+                <span class="fa fa-envelope"></span>
+              </div>
+            </div>
+
+            <div>
+              <h3>
+                Mobile Banking
+              </h3>
+
+              <p>
+                100+ transactions on a vareity of phones and tablets.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-col col-lg-4 col-xs-12">
+          <div class="card card-block text-center">
+            <div>
+              <div class="feature-icon">
+                <span class="fa fa-bell"></span>
+              </div>
+            </div>
+
+            <div>
+              <h3>
+                SME Digital
+              </h3>
+
+              <p>
+                The safest and quickest way to operate your cash credit account.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="feature-col col-lg-4 col-xs-12">
+          <div class="card card-block text-center">
+            <div>
+              <div class="feature-icon">
+                <span class="fa fa-database"></span>
+              </div>
+            </div>
+
+            <div>
+              <h3>
+                IDFC Bank MyCards
+              </h3>
+
+              <p>
+                MyCards is a mobile based Service Platform of HDFC Bank
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-col col-lg-4 col-xs-12">
+          <div class="card card-block text-center">
+            <div>
+              <div class="feature-icon">
+                <span class="fa-thin fa-mobile"></span>
+              </div>
+            </div>
+
+            <div>
+              <h3>
+                UPI Payment
+              </h3>
+
+              <p>
+                Instant and Easy payments through mobile.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-col col-lg-4 col-xs-12">
+          <div class="card card-block text-center">
+            <div>
+              <div class="feature-icon">
+                <span class="fa fa-dashboard"></span>
+              </div>
+            </div>
+
+            <div>
+              <h3>
+                Bank in Person
+              </h3>
+
+              <p>
+                Banking services are just a voice call or SMS away.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Features -->
+  <!-- Call to Action -->
+
+  <section class="cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 col-sm-12 text-lg-left text-center">
+          <h2>
+            Call to Action
+          </h2>
+
+          <p>
+            180+ Banking Services that are a chat away. Say Hi on 8080033333
+          </p>
+        </div>
+
+        <div class="col-lg-3 col-sm-12 text-lg-right text-center">
+          <a class="btn btn-ghost" href="#">Connect Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Call to Action -->
+  <!-- Portfolio -->
+
+  <section class="portfolio" id="portfolio">
+    <div class="container text-center">
+      <h2>
+        Portfolio
+      </h2>
+
+      <p>
+        As per the latest corporate shareholdings filed, IDFC Group publicly holds 225 stocks with a net worth of over
+        Rs. 228,955.3 Cr. These are shares held by HDFC Group as per the shareholding data filed with the exchanges. The
+        latest quarter tends to have missing data since not all companies may have reported their shareholding data till
+        now.
+      </p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="row">
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="{% static 'img/pic1.jpg' %}">
+              <div class="portfolio-over">
+                <div>
+                  <h3 class="card-title">
+                    Valuable Customers
+                  </h3>
+
+                  <p class="card-text">
+
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="{% static 'img/pic2.jpg' %}">
+              <div class="portfolio-over">
+                <div>
+                  <h3 class="card-title">
+                    Convenient Transaction
+                  </h3>
+
+                  <p class="card-text">
+
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="{% static 'img/pic3.jpg' %}">
+              <div class="portfolio-over">
+                <div>
+                  <h3 class="card-title">
+                    Work Life Balance
+                  </h3>
+
+                  <p class="card-text">
+
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="{% static 'img/pic4.jpg' %}">
+              <div class="portfolio-over">
+                <div>
+                  <h3 class="card-title">
+                    More Pension Schemes
+                  </h3>
+
+                  <p class="card-text">
+
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="{% static 'img/pic5.jpg' %}">
+              <div class="portfolio-over">
+                <div>
+                  <h3 class="card-title">
+                    Easy Digital Banking
+                  </h3>
+
+                  <p class="card-text">
+
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="{% static 'img/pic6.jpg' %}">
+              <div class="portfolio-over">
+                <div>
+                  <h3 class="card-title">
+                    Easy Customer Care
+                  </h3>
+
+                  <p class="card-text">
+
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="{% static 'img/pic7.jpg' %}">
+              <div class="portfolio-over">
+                <div>
+                  <h3 class="card-title">
+                    Easy Connect
+                  </h3>
+
+                  <p class="card-text">
+
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="{% static 'img/pic8.jpg' %}">
+              <div class="portfolio-over">
+                <div>
+                  <h3 class="card-title">
+                    Cashback on Debit and Credit Cards
+                  </h3>
+
+                  <p class="card-text">
+
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="section-title">Contact Us</h2>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-4">
+          <div class="info">
+            <div>
+              <i class="fa fa-map-marker"></i>
+              <p>A108 Adam Street<br>Mumbai, MB 535022</p>
+            </div>
+
+            <div>
+              <i class="fa fa-envelope"></i>
+              <p>info@idfcbank.com</p>
+            </div>
+
+            <div>
+              <i class="fa fa-phone"></i>
+              <p>+91 9567958546</p>
+              <p>0489 2258974</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-8">
+          {% csrf_token %}
+          <div class="form">
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form action="" method="post" role="form" class="contactForm">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                  data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                  data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                  data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required"
+                  data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validation"></div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="bottom">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-6 col-xs-12 text-lg-left text-center">
+            <p class="copyright-text">
+              © IDFC Pvt Ltd
+            </p>
+            <div class="credits">
+              <!--
+                All the links in the footer should remain intact.
+                You can delete the links only if you purchased the pro version.
+                Licensing information: https://bootstrapmade.com/license/
+                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bell
+              -->
+              Designed by <a href="https://bootstrapmade.com/">IDFC Development Pvt Ltd</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-xs-12 text-lg-right text-center">
+
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="index.html">Home</a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="#about">About Us</a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="#features">Features</a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="#portfolio">Portfolio</a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="{% url 'credential:regfun' %}">Register</a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
+
+
+  <!-- Required JavaScript Libraries -->
+  <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'lib/superfish/hoverIntent.js' %}"></script>
+  <script src="{% static 'lib/superfish/superfish.min.js' %}"></script>
+  <script src="{% static 'lib/tether/js/tether.min.js' %}"></script>
+  <script src="{% static 'lib/stellar/stellar.min.js' %}"></script>
+  <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+  <script src="{% static 'lib/easing/easing.js' %}"></script>
+  <script src="{% static 'lib/stickyjs/sticky.js' %}"></script>
+  <script src="{% static 'lib/parallax/parallax.js' %}"></script>
+  <script src="{% static 'lib/lockfixed/lockfixed.min.js' %}"></script>
+
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="{% static 'js/custom.js' %}"></script>
+
+  <script src="contactform/contactform.js"></script>
+
+</body>
+
+</html>
