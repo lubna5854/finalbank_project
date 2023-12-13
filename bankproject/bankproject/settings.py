@@ -82,7 +82,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':  'bankdb',
         'USER': 'root',
-        'PASSWORD': ''
+        'PASSWORD': '',
+        'PORT': '3307',
     }
 }
 
